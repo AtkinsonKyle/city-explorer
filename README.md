@@ -1,20 +1,20 @@
-# Project Name
+# City Explorer
 
-**Author**: Your Name Goes Here
+**Author**: Kyle Atkinson
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 
-Number and name of feature: ________________________________
+Number and name of feature: Lab 6/ Node, npm, and Express
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 3 hours
 
-Start time: _____
+Start time: 6:30pm
 
-Finish time: _____
+Finish time: 9:30pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 3 1/2 hours
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
