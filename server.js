@@ -22,44 +22,40 @@ app.get('/', (request, response) => {
 });
 
 app.get('/location', (request, response) => {
-  let city = request.query.city;
   // getting the data from a database or API, using a flat file
+  let city = request.query.city;
   let data = require('./data/location.json')[0];
   let location = new Location(data, city);
   response.send(location);
 });
 
-app.get('/restaurants', (request, response) => {
-  let data = require('./data/restaurants.json');
-  let restaurantArray = [];
-  data.nearby_restaurants.forEach(value => {
-    let restaurant = new Restaurant(value);
-    restaurantArray.push(restaurant);
+app.get('/weather', (request, response) => {
+  let data = require('./data/weather.json');
+  let weatherArray = [];
+  data.data.forEach(value => {
+    let rain = new Weather(value);
+    weatherArray.push(rain);
   });
-  console.log(restaurantArray);
-  response.send(restaurantArray);
-
+  response.send(weatherArray);
+  console.log(weatherArray);
 });
 
 // Constructor to tailor our incoming raw data
 
 function Location(obj, query) {
-  this.lat = obj.lat;
-  this.lon = obj.lon;
+  this.latitude = obj.lat;
+  this.longitude = obj.lon;
   this.search_query = query;
-  this.location = obj.display_name;
+  this.formatted_query = obj.display_name;
 }
 
-function Restaurant(obj) {
-  this.url = obj.restaurant.url;
-  this.name = obj.restaurant.name;
-  this.rating = obj.restaurant.user_rating.aggregate_rating;
-  this.cost = obj.price_range;
-  this.image_url = obj.restaurant.thumb;
+function Weather(obj) {
+  this.forecast = obj.weather.description;
+  this.time = obj.valid_date;
 }
 
 
-// Start our server!
+// Start the server!
 app.listen(PORT, () => {
-  console.log(`Server is now listening on port ${PORT}`);
+  console.log(`App is listening on ${PORT}`);
 });
