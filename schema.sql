@@ -1,6 +1,7 @@
 DROP TABLE weather;
 CREATE TABLE weather (
   id SERIAL PRIMARY KEY,
+  
 );
 
 DROP TABLE location;
