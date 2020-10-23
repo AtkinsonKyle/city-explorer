@@ -1,12 +1,18 @@
 # City Explorer
 
 **Author**: Kyle Atkinson
-**Version**: 1.0.3 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.4
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 
-Number and name of feature: Lab 6/ Node, npm, and Express
+## Getting Started
+<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+## Architecture
+<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+Number and name of feature: Lab 6 Node, npm, and Express -
 
 Estimate of time needed to complete: 3 hours
 
@@ -15,11 +21,8 @@ Start time: 6:30pm
 Finish time: 9:30pm
 
 Actual time needed to complete: 3 1/2 hours
-
-## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
-
-Number and name of feature: Lab 6/ Feature 2
+<!---------------------------------------------------------->
+Number and name of feature: Lab 7 -
 
 Estimate of time needed to complete: 1 hour
 
@@ -28,88 +31,22 @@ Start time: 1430
 Finish time: 1530
 
 Actual time needed to complete: 1 hour
+<!---------------------------------------------------------->
+Number and name of feature: Lab 8 - 10/22
 
-## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+Estimate of time needed to complete: 3 hour
 
-Number and name of feature: Lab 6/ Feature 3
+Start time: 2100
 
-Estimate of time needed to complete: 1 hour
+Finish time: 2130
 
-Start time: 1430
-
-Finish time: 1530
-
-Actual time needed to complete: 1 hour
+Actual time needed to complete: 3 hours
 
 ## Change Log
 
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource.
-
-## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
-
-Number and name of feature: Lab 6/ Feature 4
-
-Estimate of time needed to complete: 1 hour
-
-Start time: 1430
-
-Finish time: 1530
-
-Actual time needed to complete: 1 hour
-
-# Lab 7
-
-## Overview
-
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
-
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
-
-## Getting Started
-
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
-
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
-
-## Architecture
-
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
-
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
-
-## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource.
+10-22-2020 2100 - Added schema to structure, refactoring code for SQL.
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application.
