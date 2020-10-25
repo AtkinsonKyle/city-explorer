@@ -22,21 +22,40 @@ const client = new pg.Client(process.env.DATABASE_URL);
 app.get('/location', locationHandler);
 app.get('/weather', weatherHandler);
 app.get('/trails', trailHandler);
+app.use('*', notFoundHandler);
 
-// Location
 function locationHandler(request, response) {
   let city = request.query.city;
-  let key = process.env.LOCATION_IQ_API_KEY;
-  const URL = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${city}&format=json`;
-  superagent.get(URL)
+  let key = process.env.LOCATION_IQ_API;
+
+  const checkSQL = `SELECT * FROM location`;
+  client.query(checkSQL)
     .then(data => {
-      let location = new Location(data.body[0], city);
-      response.status(200).json(location);
+      let dataCheck = data.rows.filter(value => value.search_query === city);
+
+      if (dataCheck[0]) {
+        response.status(200).send(dataCheck[0]);
+      }
+      else {
+        const URL = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${city}&format=json`;
+        superagent.get(URL)
+          .then(data => {
+            let location = new Location(data.body[0], city);
+
+            response.status(200).send(location);
+
+            const SQL = 'INSERT INTO location (search_query, formatted_query, latitude, longitude) VALUES($1, $2, $3, $4) RETURNING *';
+            const values = [location.search_query, location.formatted_query, location.latitude, location.longitude];
+            client.query(SQL, values)
+
+              .then(data => { //eslint-disable-line
+
+                //store data
+              });
+          });
+      }
     })
-    .catch(error => {
-      response.status(500).send('This isn\'t working, try something else');
-      console.log('error', error);
-    });
+    .catch(error => error500(request, response, error));
 }
 
 // Weather
@@ -119,7 +138,14 @@ client.connect()
     console.log('umm, you screwed up, this is why:', error);
   });
 
-// Start server
-// app.listen(PORT, () => {
-//   console.log(`Server is now listening on port ${PORT}`);
-// });
+
+// Error functions
+
+function error500(req, res, erro) {
+  console.log('You have an error:', erro);
+  res.status(500).send('text message');
+}
+
+function notFoundHandler(request, response) {
+  response.status(404).send(`Nothing to see here, move along.`);
+}
